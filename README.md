@@ -1,6 +1,6 @@
 ### 项目介绍
 
-该项目是我对京东JoyAgent-Genie中genie-backend进行的python版改造，目前除智能问数部分正在改造外，其他功能已改造完成。在对该项目改造的过程中，受益良多。京东的joyagent确实是一个很优秀的项目。
+该项目是我对京东JoyAgent-Genie中genie-backend进行的python版改造，目前除智能问数部分正在改造外，其他功能已改造完成。在对该项目改造的过程中，受益良多，joyagent确实是一个很优秀的项目。
 
 ### 配置说明
 
@@ -39,3 +39,4 @@ llm.settings llm配置项
 
 
 python server.py
+
