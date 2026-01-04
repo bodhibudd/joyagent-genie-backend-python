@@ -22,17 +22,21 @@ llm.settings llm配置项
 ```
 
 ### 演示
+<img width="1877" height="747" alt="image-20260104174525242" src="https://github.com/user-attachments/assets/0b9bd29b-a6bc-4579-b41e-fe794d30c50e" />
 
-![image-20260104174525242](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20260104174525242.png)
+
 
 深度研究：
 
-![image-20260104174801783](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20260104174801783.png)
+<img width="1870" height="592" alt="image-20260104174801783" src="https://github.com/user-attachments/assets/f1d135fe-c5d2-46d2-bbb4-4e02f0825ec0" />
+
 
 表格模式：
 
-![image-20260104184803577](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20260104184803577.png)
+<img width="1847" height="773" alt="image-20260104184803577" src="https://github.com/user-attachments/assets/01c79d11-c86b-4f54-a84e-03496968ebfc" />
+
 
 ### 项目启动
+
 
 python server.py
