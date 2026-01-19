@@ -84,7 +84,7 @@ async def handle_multi_agent_request(auto_req: AgentRequest, queue):
                     logger.info("lyz:" + result.model_dump_json(by_alias=True))
                     break
                 await queue.put(result.model_dump_json(by_alias=True))
-                logger.info("lyz:"+ result.model_dump_json(by_alias=True))
+                logger.info(result.model_dump_json(by_alias=True))
     except Exception:
         logger.error(traceback.format_exc())
 
@@ -126,3 +126,4 @@ async def query_multi_agent_incr_stream(request: GptQueryReq):
     return EventSourceResponse(
         _stream(queue)
     )
+
