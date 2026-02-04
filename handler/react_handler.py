@@ -33,7 +33,8 @@ class ReactHandler(AgentHandler):
         data = build_stream_response(context.request_id, context.agent_type, None, "result", task_result, None, True)
 
         await context.queue.put("[DONE]"+data)
-        return ""
+        return data
 
     def support(self, agent_type):
         return AgentType.REACT.value == agent_type
+
