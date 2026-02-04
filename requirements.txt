@@ -12,3 +12,4 @@ python-dotenv==1.0.1
 pydantic-settings==2.10.1
 requests==2.32.2
 pyfiglet==1.0.4
+langfuse==3.12.1
