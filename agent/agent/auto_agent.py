@@ -15,7 +15,13 @@ from handler.react_handler import ReactHandler
 from handler.plan_solve_handler import PlanSolveHandler
 from config.genie_config import genie_config
 from loguru import logger
-
+from langfuse import Langfuse
+from langfuse.openai import OpenAI
+langfuse = Langfuse(
+    secret_key="sk-xxx",
+    public_key="pk-xxx",
+    host="https://cloud.langfuse.com"
+)
 
 def build_tool_collection(agent_context: AgentContext, agent_request: AgentRequest):
     tool_collection = ToolCollection(agent_context)
@@ -113,9 +119,15 @@ class AutoAgent(object):
 
             agent_context.tool_collection = build_tool_collection(agent_context, request)
             handler = self._get_handler(request.agent_type)
-            await handler.handle(agent_context, request)
+            with langfuse.start_as_current_observation(as_type="span", name=handler.__class__.__name__) as span:
+                result = await handler.handle(agent_context, request)
+                span.update_trace(
+                    input= request.query,
+                    output=result
+                )
         except Exception as e:
             logger.error(f"{request.request_id} auto agent error")
             logger.error(traceback.format_exc())
+
 
 
