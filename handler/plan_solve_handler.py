@@ -88,7 +88,7 @@ class PlanSolveHandler(AgentHandler):
                 break
             step_idx += 1
 
-        return ""
+        return data
 
     def support(self, agent_type):
         return AgentType.PLAN_SOLVE.value == agent_type
@@ -110,4 +110,5 @@ class PlanSolveHandler(AgentHandler):
         except Exception as e:
             logger.error(f"{request.request_id} SOP召回处理异常")
             logger.error(traceback.format_exc())
+
 
